@@ -42,9 +42,7 @@
     <!-- Conteúdo Principal -->
     <section class="container my-5">
         <h2 class="text-center">Impactos da Crise de Fumaça</h2>
-        <iframe width="1080" height="720"
-src="https://www.youtube.com/embed/REHvAcQUVMQ?si=n5cS_TlhHh82tR3w">
-</iframe>
+        <iframe width="1080" height="720" src="https://www.youtube.com/embed/REHvAcQUVMQ?si=n5cS_TlhHh82tR3w"></iframe>
         <p>A crise de fumaça que atingiu o Acre nos últimos meses tem causado impactos severos tanto na saúde dos moradores quanto no meio ambiente. Esses efeitos são amplos e preocupantes, afetando a qualidade de vida, a saúde pública e a biodiversidade da região.</p>
         
         <h3>Impactos na Saúde dos Moradores</h3>
@@ -76,6 +74,24 @@ src="https://www.youtube.com/embed/REHvAcQUVMQ?si=n5cS_TlhHh82tR3w">
     <footer class="bg-dark text-white text-center py-3">
         <p>Informações atualizadas sobre a situação no Acre &copy; 2024</p>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Alerta de conscientização ao carregar a página
+        window.onload = function() {
+            alert("A situação das queimadas no Acre é crítica. Conscientize-se e ajude a preservar o meio ambiente.");
+        };
+
+        // Rolagem suave para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>

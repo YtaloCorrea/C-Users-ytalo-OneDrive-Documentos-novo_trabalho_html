@@ -7,6 +7,12 @@
     <title>Causas das Queimadas no Acre</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/estilo.css">
+    <style>
+        .highlight {
+            background-color: #f8d7da;
+            transition: background-color 0.5s;
+        }
+    </style>
 </head>
 <body>
 
@@ -38,7 +44,7 @@
 
     <!-- Conteúdo Principal -->
     <section class="container my-5">
-        <ul>
+        <ul id="causas-list">
             <li><strong>Queimadas Agrícolas:</strong> Agricultores usam o fogo para preparar a terra, mas muitas vezes de forma descontrolada, causando incêndios em áreas próximas.</li>
             <li><strong>Desmatamento e Exploração Ilegal:</strong> Derrubar árvores para madeira e abrir espaço para pastagens aumenta as queimadas, deixando a vegetação mais seca e fácil de pegar fogo.</li>
             <li><strong>Clima Seco e Quente:</strong> O período seco do ano na Amazônia favorece a propagação do fogo, com altas temperaturas e baixa umidade.</li>
@@ -52,6 +58,33 @@
     <footer class="bg-dark text-white text-center py-3">
         <p>Informações atualizadas sobre a situação no Acre &copy; 2024</p>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Adiciona animação de clique em cada item da lista
+        document.querySelectorAll('#causas-list li').forEach(function(item) {
+            item.addEventListener('click', function() {
+                item.classList.add('highlight');
+                setTimeout(function() {
+                    item.classList.remove('highlight');
+                }, 1000);
+            });
+        });
+
+        // Realça a seção ativa com a cor de fundo
+        window.addEventListener('scroll', function() {
+            var sections = document.querySelectorAll('section');
+            var scrollPos = window.scrollY + window.innerHeight / 2;
+
+            sections.forEach(function(section) {
+                if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+                    section.style.backgroundColor = '#e9ecef';
+                } else {
+                    section.style.backgroundColor = 'transparent';
+                }
+            });
+        });
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
